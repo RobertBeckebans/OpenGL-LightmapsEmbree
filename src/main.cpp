@@ -647,7 +647,9 @@ private:
 
     bool load_scene()
     {
-        dw::Mesh* mesh = dw::Mesh::load("mesh/GI_Test_Scene.obj");
+        //dw::Mesh* mesh = dw::Mesh::load("mesh/GI_Test_Scene.obj");
+		//dw::Mesh* mesh = dw::Mesh::load("mesh/Box_Lightmap.fbx");
+		dw::Mesh* mesh = dw::Mesh::load("mesh/WhiteRoom.fbx");
 
         if (!mesh)
         {
@@ -1271,7 +1273,7 @@ private:
 
         clear_lightmap();
 
-        dw::Task* tasks[16];
+        dw::Task* tasks[32];
 
         std::function<void(void*)> bake_function = [=](void* data) {
             BakeTaskArgs* args = (BakeTaskArgs*)data;
