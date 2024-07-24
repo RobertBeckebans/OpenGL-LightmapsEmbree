@@ -10,12 +10,13 @@
 #include <random>
 #include <chrono>
 #include <random>
-#include <rtccore.h>
+#include <rtcore.h>
 #include <rtcore_geometry.h>
 #include <rtcore_common.h>
 #include <rtcore_ray.h>
 #include <rtcore_device.h>
 #include <rtcore_scene.h>
+#include <rtcore_common.h>
 #include <xatlas.h>
 #include "skybox.h"
 
@@ -1482,7 +1483,7 @@ private:
     float m_camera_y;
 
     float                 m_sample_weight         = 0.0f;
-    std::atomic<uint32_t> m_baking_progress       = 0;
+    std::atomic<uint32_t> m_baking_progress;
     uint32_t              m_total_samples_to_bake = 0;
     dw::Task*             m_bake_parent_task      = nullptr;
     dw::ThreadPool        m_thread_pool;
